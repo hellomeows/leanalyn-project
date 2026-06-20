@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — Leanalyn Figueroa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tools.css">
+</head>
+<body>
+
+<div class="paper-grid"></div>
+
+<header class="site-header">
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
+  <nav class="main-nav">
+    <a href="index.html">home</a>
+    <a href="coursework.html">coursework</a>
+    <a href="tools.html" class="active">tools</a>
+    <a href="about.html">about</a>
+    <a href="resume.html">resume</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Open menu">☰</button>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow">Built, not just studied</p>
+    <h1 class="page-title">Three tools, three classes.</h1>
+    <p class="page-sub">
+      Each calculator below comes from a real concept I worked through in
+      coursework. They're small on purpose — the point isn't the size of
+      the tool, it's that the math actually runs.
+    </p>
+  </section>
+
+  <!-- ============ TOOL 1: TVM CALCULATOR ============ -->
+  <section class="tool-section" id="tvm">
+    <div class="tool-heading">
+      <span class="tool-tag">01 · finance</span>
+      <h2>Time Value of Money</h2>
+      <p class="tool-from">From: managerial finance coursework &amp; actuarial exam prep (Exam FM)</p>
+      <p class="tool-desc">
+        A dollar today is worth more than a dollar later. This calculator solves
+        the present/future value relationship — pick what you know, and it solves
+        for what you don't.
+      </p>
+    </div>
+
+    <div class="tool-card">
+      <div class="tvm-grid">
+        <div class="field">
+          <label for="tvm-pv">Present Value (PV)</label>
+          <input type="number" id="tvm-pv" placeholder="e.g. 1000">
+        </div>
+        <div class="field">
+          <label for="tvm-fv">Future Value (FV)</label>
+          <input type="number" id="tvm-fv" placeholder="leave blank to solve">
+        </div>
+        <div class="field">
+          <label for="tvm-rate">Annual Rate (%)</label>
+          <input type="number" id="tvm-rate" placeholder="e.g. 5">
+        </div>
+        <div class="field">
+          <label for="tvm-years">Years (n)</label>
+          <input type="number" id="tvm-years" placeholder="e.g. 10">
+        </div>
+      </div>
+
+      <div class="solve-row">
+        <label for="tvm-solve">Solve for:</label>
+        <select id="tvm-solve">
+          <option value="fv">Future Value</option>
+          <option value="pv">Present Value</option>
+        </select>
+        <button class="btn btn-primary" id="tvm-calc">calculate →</button>
+      </div>
+
+      <div class="result-box" id="tvm-result">
+        <span class="result-label">result</span>
+        <span class="result-value" id="tvm-result-value">—</span>
+      </div>
+      <p class="formula-note">FV = PV × (1 + r)ⁿ &nbsp;·&nbsp; PV = FV / (1 + r)ⁿ</p>
+    </div>
+  </section>
+
+  <!-- ============ TOOL 2: NEWTON'S METHOD ============ -->
+  <section class="tool-section" id="newton">
+    <div class="tool-heading">
+      <span class="tool-tag">02 · calculus</span>
+      <h2>Newton's Method Visualizer</h2>
+      <p class="tool-from">From: Calculus &amp; optimization coursework</p>
+      <p class="tool-desc">
+        Finds the root of a function by repeatedly following the tangent line
+        down to the x-axis. Enter a function and a starting guess, then watch
+        it converge step by step.
+      </p>
+    </div>
+
+    <div class="tool-card">
+      <div class="newton-grid">
+        <div class="field">
+          <label for="newton-fn">f(x) =</label>
+          <select id="newton-fn">
+            <option value="x2-2">x² − 2 &nbsp;(root: √2)</option>
+            <option value="x3-x-2">x³ − x − 2</option>
+            <option value="cosx-x">cos(x) − x</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="newton-x0">Starting guess (x₀)</label>
+          <input type="number" id="newton-x0" value="1" step="0.1">
+        </div>
+        <button class="btn btn-primary" id="newton-run">run →</button>
+      </div>
+
+      <canvas id="newton-canvas" width="600" height="320"></canvas>
+
+      <div class="iter-table-wrap">
+        <table class="iter-table" id="newton-table">
+          <thead>
+            <tr><th>iteration</th><th>xₙ</th><th>f(xₙ)</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOL 3: PAGERANK SIMULATOR ============ -->
+  <section class="tool-section" id="pagerank">
+    <div class="tool-heading">
+      <span class="tool-tag">03 · big data mining</span>
+      <h2>PageRank Simulator</h2>
+      <p class="tool-from">From: CMSC 4373 — Big Data Mining with Python Integration (link analysis unit)</p>
+      <p class="tool-desc">
+        A tiny 5-page web, simplified down from the actual algorithm behind
+        Google search. Click "iterate" to watch rank flow through links until
+        it converges.
+      </p>
+    </div>
+
+    <div class="tool-card">
+      <div class="pagerank-layout">
+        <canvas id="pagerank-canvas" width="380" height="320"></canvas>
+        <div class="pagerank-side">
+          <div class="pagerank-controls">
+            <button class="btn btn-primary" id="pr-step">iterate →</button>
+            <button class="btn btn-ghost" id="pr-reset">reset</button>
+          </div>
+          <table class="iter-table" id="pagerank-table">
+            <thead><tr><th>page</th><th>rank</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <p class="formula-note" id="pr-iter-count">iteration: 0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
+  <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/tvm.js"></script>
+<script src="js/newton.js"></script>
+<script src="js/pagerank.js"></script>
+</body>
+</html>

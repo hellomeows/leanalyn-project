@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coursework — Leanalyn Figueroa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/coursework.css">
+</head>
+<body>
+
+<div class="paper-grid"></div>
+
+<header class="site-header">
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
+  <nav class="main-nav">
+    <a href="index.html">home</a>
+    <a href="coursework.html" class="active">coursework</a>
+    <a href="tools.html">tools</a>
+    <a href="about.html">about</a>
+    <a href="resume.html">resume</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Open menu">☰</button>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow">B.S. Computer Information Systems · Math Minor</p>
+    <h1 class="page-title">What I actually worked on.</h1>
+    <p class="page-sub">
+      Organized by subject area rather than semester, since that's a better
+      picture of what I can actually do. Three of these courses fed directly
+      into the <a href="tools.html">interactive tools</a> on this site —
+      I've marked those.
+    </p>
+  </section>
+
+  <!-- JUMP NAV -->
+  <nav class="subject-jump">
+    <a href="#data">Databases &amp; Data</a>
+    <a href="#programming">Programming</a>
+    <a href="#math">Mathematics</a>
+    <a href="#finance">Finance &amp; Accounting</a>
+    <a href="#systems">Systems &amp; Architecture</a>
+  </nav>
+
+  <!-- ============ DATABASES & DATA ============ -->
+  <section class="subject-block" id="data">
+    <h2 class="subject-title"><span class="subject-num">01</span> Databases &amp; Data</h2>
+
+    <article class="course featured">
+      <div class="course-head">
+        <h3>CMSC 4373 — Big Data Mining with Python Integration</h3>
+        <span class="tool-link-tag">→ built the PageRank Simulator</span>
+      </div>
+      <p>
+        The course that fed directly into one of my interactive tools. We covered
+        link analysis (PageRank, TrustRank, HITS, spam farm detection), frequent
+        itemset mining (A-Priori, PCY, FP-Growth), and a recommendation systems
+        case study using Spotify data. My final project was a matrix factorization
+        analysis paper applying these concepts to real recommendation problems.
+      </p>
+      <p class="course-highlight">
+        <strong>Project:</strong> Implemented a link analysis assignment covering
+        PageRank, TrustRank, and HITS from scratch — the same core logic behind
+        the simulator on the <a href="tools.html#pagerank">tools page</a>.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>Database Management</h3>
+      <p>
+        Multi-database SQL work across several real schema sets — StayWell,
+        ConstructCo, SaleCo, LargeCo, and FACT — plus dedicated lab work
+        building out the KimTay and StayWell databases from the ground up in MySQL.
+      </p>
+    </article>
+  </section>
+
+  <!-- ============ PROGRAMMING ============ -->
+  <section class="subject-block" id="programming">
+    <h2 class="subject-title"><span class="subject-num">02</span> Programming</h2>
+
+    <article class="course">
+      <h3>Java Programming</h3>
+      <p>
+        Core language fundamentals through an object-oriented lens: streams,
+        generics, inheritance, and the Comparable interface for custom object
+        sorting.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>CIS Capstone — Flashcard Study App</h3>
+      <p>
+        A full systems-development-lifecycle project for a fictional product
+        (LearnEdge Solutions LLC). I produced a complete deliverable set: a
+        Statement of Work, process flowchart, interactive mockup, Standard
+        Operating Procedure, Data Transfer Specification, and a full Technical
+        Specification document — the kind of documentation a real software
+        team would actually use to build and hand off a product.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>Web Fundamentals</h3>
+      <p>
+        HTML/CSS foundations — also the literal toolkit this portfolio site
+        is built with.
+      </p>
+    </article>
+  </section>
+
+  <!-- ============ MATHEMATICS ============ -->
+  <section class="subject-block" id="math">
+    <h2 class="subject-title"><span class="subject-num">03</span> Mathematics</h2>
+
+    <article class="course featured">
+      <div class="course-head">
+        <h3>Calculus &amp; Optimization</h3>
+        <span class="tool-link-tag">→ built the Newton's Method Visualizer</span>
+      </div>
+      <p>
+        Derivatives, optimization problems, and root-finding methods —
+        including Newton's Method, which became the second tool on this site.
+        Watching the tangent-line approximation actually converge on a canvas,
+        rather than just on paper, is part of why I wanted to build it.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>Linear Algebra &amp; Statistics</h3>
+      <p>
+        Coursework supporting both my CIS coursework (matrix factorization,
+        data analysis) and ongoing actuarial exam preparation. I'm currently
+        an SOA registered candidate studying for Exam FM.
+      </p>
+    </article>
+  </section>
+
+  <!-- ============ FINANCE & ACCOUNTING ============ -->
+  <section class="subject-block" id="finance">
+    <h2 class="subject-title"><span class="subject-num">04</span> Finance &amp; Accounting</h2>
+
+    <article class="course featured">
+      <div class="course-head">
+        <h3>Managerial &amp; Cost Accounting</h3>
+        <span class="tool-link-tag">→ built the TVM Calculator</span>
+      </div>
+      <p>
+        Variance analysis, activity-based costing (ABC), flexible budgeting,
+        and process costing using both weighted-average and FIFO methods.
+        Combined with independent actuarial exam study on time value of money,
+        this is where the first tool on this site came from — the formula
+        shows up constantly once you start looking for it.
+      </p>
+    </article>
+
+    <article class="course">
+      <h3>Microeconomics</h3>
+      <p>
+        Marginal analysis, optimization at the margin, monopoly theory,
+        externalities, and consumer/producer surplus — the kind of
+        cost-benefit thinking that shows up in both the TVM calculator and
+        how I approach tradeoffs generally.
+      </p>
+    </article>
+  </section>
+
+  <!-- ============ SYSTEMS & ARCHITECTURE ============ -->
+  <section class="subject-block" id="systems">
+    <h2 class="subject-title"><span class="subject-num">05</span> Systems &amp; Architecture</h2>
+
+    <article class="course">
+      <h3>Computer Architecture &amp; Assembly Language</h3>
+      <p>
+        Boolean algebra, the MARIE architecture, and research into ARM
+        architecture — the layer underneath the code most people only
+        ever see running.
+      </p>
+    </article>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
+  <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
