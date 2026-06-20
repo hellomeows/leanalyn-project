@@ -160,6 +160,28 @@ body {
   margin: 40px 0 0;
 }
 
+/* sub-headings within a journal entry body, used on
+   coursework / about / tools pages */
+.entry-h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 44px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--grid-line);
+}
+.entry-body h2.entry-h2:first-of-type {
+  border-top: none;
+  margin-top: 36px;
+  padding-top: 0;
+}
+
+.entry-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* btn classes still used on other pages (tools, about, resume) */
 .btn {
   font-family: var(--font-mono);

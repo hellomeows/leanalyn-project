@@ -1,28 +1,15 @@
 /* ============================================
-   PAGE HERO (shared shape across subpages)
+   TOOLS INTRO (uses shared .journal-entry from style.css)
    ============================================ */
-.page-hero {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 56px 24px 40px;
-}
-.page-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  font-weight: 600;
-  margin: 14px 0 18px;
-}
-.page-sub {
-  color: var(--ink-soft);
-  max-width: 62ch;
-  font-size: 1.05rem;
+.tools-intro {
+  padding-bottom: 20px;
 }
 
 /* ============================================
    TOOL SECTIONS
    ============================================ */
 .tool-section {
-  max-width: var(--max-width);
+  max-width: 680px;
   margin: 0 auto;
   padding: 50px 24px;
   border-top: 1px solid var(--grid-line);
@@ -35,18 +22,10 @@
   margin-bottom: 28px;
 }
 
-.tool-tag {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--indigo);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
 .tool-heading h2 {
   font-family: var(--font-display);
-  font-size: 1.9rem;
-  margin: 10px 0 6px;
+  font-size: 1.7rem;
+  margin: 0 0 8px;
 }
 
 .tool-from {
