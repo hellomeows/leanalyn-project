@@ -71,11 +71,21 @@
   border-radius: 6px;
   background: var(--paper);
   color: var(--ink);
+  transition: opacity 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 .field input:focus,
 .field select:focus {
   outline: 2px solid var(--indigo);
   outline-offset: 1px;
+}
+
+/* the field that will be solved for fades back, the live inputs stay full strength */
+.field.is-computed input {
+  opacity: 0.55;
+  background: var(--card-border);
+}
+.field.is-computed label {
+  color: var(--coral);
 }
 
 /* ============================================
@@ -111,6 +121,13 @@
   justify-content: space-between;
   margin-bottom: 14px;
 }
+.result-box.result-pop {
+  animation: result-pop 0.45s ease;
+}
+@keyframes result-pop {
+  0%   { transform: scale(0.97); border-color: var(--coral); background: var(--sticky-yellow); }
+  100% { transform: scale(1); border-color: var(--indigo-soft); background: var(--paper); }
+}
 .result-label {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -128,7 +145,7 @@
 .formula-note {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: #918E86;
+  color: #9C9288;
   margin: 0;
 }
 
@@ -153,6 +170,18 @@
   border: 1px solid var(--card-border);
   border-radius: 8px;
   margin-bottom: 20px;
+  transition: opacity 0.25s ease;
+}
+#newton-canvas.is-switching {
+  opacity: 0.25;
+}
+
+.iter-table tr {
+  animation: row-in 0.3s ease;
+}
+@keyframes row-in {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .iter-table-wrap {
@@ -196,6 +225,10 @@
   background: var(--paper);
   border: 1px solid var(--card-border);
   border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+#pagerank-canvas.is-pulsing {
+  border-color: var(--coral);
 }
 
 .pagerank-side {
