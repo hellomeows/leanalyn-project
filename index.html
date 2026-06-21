@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
@@ -31,45 +32,74 @@
     <p class="entry-date">Capstone, 2026</p>
     <h1 class="entry-title">Hi, I'm Leanalyn.</h1>
 
-    <div class="entry-body">
-      <p>
-        I'm a senior at Benedictine University finishing up a B.S. in
-        Computer Information Systems with a minor in Mathematics. This site
-        is my capstone project, basically a slightly more honest version of
-        a portfolio: not a highlight reel, just a record of what I actually
-        worked on and learned along the way.
-      </p>
+    <p class="entry-lede">
+      A few notes on what I actually worked on, click each one to flip to
+      the next.
+    </p>
 
-      <p>
-        I like problems that have exact answers. That's probably the
-        clearest way to describe why I ended up studying both computer
-        science and math instead of picking one. A lot of my coursework
-        sits right at that intersection, databases, link analysis, cost
-        accounting, calculus, and I've written more about all of it on the
-        <a href="coursework.html">coursework page</a>.
-      </p>
+    <div class="sticky-stack" id="sticky-stack">
+      <div role="button" tabindex="0" class="sticky-note" data-color="yellow" style="--rot:-3deg;">
+        <p>
+          I'm a senior at Benedictine University finishing up a B.S. in
+          Computer Information Systems. This site is my capstone project,
+          basically a slightly more honest version of a portfolio: not a
+          highlight reel, just a record of what I actually worked on and
+          learned along the way.
+        </p>
+        <span class="sticky-hint">tap for more →</span>
+      </div>
 
-      <p>
-        The more interesting part of this site, at least to me, is the
-        <a href="tools.html">tools page</a>. I built three small calculators
-        from concepts I actually studied: a time value of money calculator,
-        a Newton's Method visualizer, and a tiny PageRank simulator. None of
-        them are big, but they all actually run the math instead of just
-        describing it, which felt like a better way to prove I learned
-        something than just listing a class name.
-      </p>
+      <div role="button" tabindex="0" class="sticky-note" data-color="pink" style="--rot:2deg;">
+        <p>
+          I like problems that have exact answers. That's probably the
+          clearest way to describe why I ended up studying both computer
+          science and math instead of picking one. A lot of my coursework
+          sits right at that intersection, databases, link analysis, cost
+          accounting, calculus, and I've written more about all of it on
+          the <a href="coursework.html">coursework page</a>.
+        </p>
+        <span class="sticky-hint">tap for more →</span>
+      </div>
 
-      <p>
-        If you want the non-academic version of me, Japanese culture and
-        anime, Vocaloid, history, philosophy, that's mostly on the
-        <a href="about.html">about page</a>. And if you just need the
-        short, scannable version of all of this, there's a normal
-        <a href="resume.html">resume</a> too.
-      </p>
+      <div role="button" tabindex="0" class="sticky-note" data-color="blue" style="--rot:-1.5deg;">
+        <p>
+          The more interesting part of this site, at least to me, is the
+          <a href="tools.html">tools page</a>. I built three small
+          calculators from concepts I actually studied: a time value of
+          money calculator, a Newton's Method visualizer, and a tiny
+          PageRank simulator. None of them are big, but they all actually
+          run the math instead of just describing it, which felt like a
+          better way to prove I learned something than just listing a
+          class name.
+        </p>
+        <span class="sticky-hint">tap for more →</span>
+      </div>
 
-      <p>
-        Thanks for reading this far. Feel free to look around.
-      </p>
+      <div role="button" tabindex="0" class="sticky-note" data-color="mint" style="--rot:3deg;">
+        <p>
+          If you want the non-academic version of me, Japanese culture and
+          anime, Vocaloid, history, philosophy, that's mostly on the
+          <a href="about.html">about page</a>. And if you just need the
+          short, scannable version of all of this, there's a normal
+          <a href="resume.html">resume</a> too.
+        </p>
+        <span class="sticky-hint">tap for more →</span>
+      </div>
+
+      <div role="button" tabindex="0" class="sticky-note" data-color="lavender" style="--rot:-2deg;">
+        <p>
+          Thanks for reading this far. Feel free to look around.
+        </p>
+        <span class="sticky-hint">back to the start →</span>
+      </div>
+    </div>
+
+    <div class="sticky-dots" id="sticky-dots" aria-hidden="true">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
 
     <p class="entry-signoff">— Lea</p>
@@ -83,5 +113,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
