@@ -31,6 +31,31 @@
   --max-width: 1080px;
 }
 
+/* ============================================
+   MUTED PALETTE (theme toggle)
+   same roles, softer/darker values — everything
+   using the tokens above restyles automatically
+   ============================================ */
+[data-theme="muted"] {
+  --paper: #EFE9E0;
+  --ink: #34302C;
+  --ink-soft: #635C55;
+  --grid-line: #DCD3C4;
+  --card-bg: #F5F0E8;
+  --card-border: #DED4C2;
+
+  --sticky-yellow: #E8DEC0;
+  --sticky-yellow-border: #D2C299;
+  --sticky-pink: #E0CBD0;
+  --sticky-pink-border: #CDB0B6;
+  --sticky-blue: #C7D6E0;
+  --sticky-blue-border: #ABC1D0;
+  --sticky-mint: #C9DCC8;
+  --sticky-mint-border: #AECBAD;
+  --sticky-lavender: #D6CDE3;
+  --sticky-lavender-border: #BFB0D6;
+}
+
 * { box-sizing: border-box; }
 
 html {
@@ -39,12 +64,28 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.55;
   position: relative;
+
+  /* soft pastel gradient, drifting very slowly */
+  background: linear-gradient(135deg,
+    var(--paper) 0%,
+    var(--sticky-pink) 22%,
+    var(--sticky-blue) 48%,
+    var(--sticky-mint) 74%,
+    var(--paper) 100%);
+  background-size: 320% 320%;
+  animation: gradient-drift 36s ease infinite;
+  transition: background 0.5s ease;
+}
+
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ============================================
@@ -58,8 +99,58 @@ body {
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.45;
+  opacity: 0.4;
   mask-image: linear-gradient(to bottom, black, black 60%, transparent 100%);
+  transition: opacity 0.5s ease;
+}
+
+/* ============================================
+   FLOATING PETALS
+   a handful of small drifting marks behind the
+   content — purely decorative, css-driven
+   ============================================ */
+.petal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.petal {
+  position: absolute;
+  top: -6vh;
+  color: var(--coral);
+  opacity: 0;
+  font-size: 14px;
+  animation: petal-fall linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes petal-fall {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 0.35; }
+  92%  { opacity: 0.35; }
+  100% { transform: translateY(112vh) translateX(30px) rotate(180deg); opacity: 0; }
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.theme-toggle:hover {
+  color: var(--indigo);
+  border-color: var(--indigo-soft);
+  transform: translateY(-1px);
 }
 
 /* ============================================
@@ -109,6 +200,12 @@ body {
   width: 100%;
   height: 2px;
   background: var(--coral);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-toggle {
@@ -198,6 +295,106 @@ body {
 .entry-body strong {
   color: var(--ink);
   font-weight: 600;
+}
+
+/* ============================================
+   MARGIN NOTES (hover/tap annotations)
+   used inline within entry-body text, e.g. on
+   the coursework page
+   ============================================ */
+.noted {
+  position: relative;
+  border-bottom: 1.5px dotted var(--indigo-soft);
+  cursor: help;
+}
+.noted .note-pop {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  width: 220px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px 10px 8px 10px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 22px rgba(61, 56, 51, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 5;
+}
+.noted:hover .note-pop,
+.noted:focus .note-pop {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 480px) {
+  .noted .note-pop { width: 180px; }
+}
+
+/* ============================================
+   SITE LOG
+   a short, dated running log — styled as a small
+   stack of sticky notes rather than a stack of
+   sticky-note interactions
+   ============================================ */
+.site-log {
+  margin: 44px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.log-entry {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 3px 10px 8px 10px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 16px rgba(61, 56, 51, 0.06);
+  max-width: 480px;
+}
+.log-entry:nth-child(odd)  { transform: rotate(-0.6deg); }
+.log-entry:nth-child(even) { transform: rotate(0.5deg); margin-left: 22px; }
+.log-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 4px;
+}
+.log-text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   NOW PLAYING NOTE
+   ============================================ */
+.now-playing {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sticky-lavender);
+  border: 1px solid var(--sticky-lavender-border);
+  border-radius: 3px 10px 8px 10px;
+  padding: 12px 18px;
+  margin: 8px 0 32px;
+  transform: rotate(-1deg);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+.now-playing .np-icon {
+  font-size: 0.95rem;
+}
+.now-playing .np-label {
+  color: var(--ink-soft);
+  margin-right: 2px;
 }
 
 /* btn classes still used on other pages (tools, about, resume) */
@@ -299,6 +496,10 @@ body {
   .entry-body p {
     font-size: 1rem;
   }
+  .theme-toggle {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
 }
 
 /* ============================================
@@ -314,5 +515,12 @@ button:focus-visible {
   * {
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+  body {
+    animation: none !important;
+    background-position: 0% 50% !important;
+  }
+  .petal-layer {
+    display: none !important;
   }
 }

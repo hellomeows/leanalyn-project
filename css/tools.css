@@ -6,6 +6,50 @@
 }
 
 /* ============================================
+   PROGRESS INDICATOR
+   sticky strip showing which of the three tools
+   is currently in view
+   ============================================ */
+.tools-progress {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 14px 24px;
+  margin-bottom: 8px;
+  background: rgba(250, 246, 240, 0.82);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--grid-line);
+}
+[data-theme="muted"] .tools-progress {
+  background: rgba(239, 233, 224, 0.85);
+}
+.tools-progress a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.tools-progress a.is-active {
+  color: var(--coral);
+  border-color: var(--coral);
+}
+@media (max-width: 560px) {
+  .tools-progress {
+    gap: 16px;
+    padding: 12px 16px;
+  }
+  .tools-progress a {
+    font-size: 0.72rem;
+  }
+}
+
+/* ============================================
    TOOL SECTIONS
    ============================================ */
 .tool-section {
