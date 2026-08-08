@@ -1,3 +1,55 @@
+// Theme toggle (pastel <-> muted palette), persisted across pages
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('theme-toggle');
+  const STORAGE_KEY = 'lf-theme';
+
+  function applyTheme(theme) {
+    if (theme === 'muted') {
+      root.setAttribute('data-theme', 'muted');
+      if (themeBtn) themeBtn.textContent = 'pastel palette';
+    } else {
+      root.removeAttribute('data-theme');
+      if (themeBtn) themeBtn.textContent = 'muted palette';
+    }
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* storage unavailable */ }
+  applyTheme(saved);
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      const isMuted = root.getAttribute('data-theme') === 'muted';
+      const next = isMuted ? 'pastel' : 'muted';
+      applyTheme(next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) { /* storage unavailable */ }
+    });
+  }
+});
+
+// Floating petals — a handful of small drifting marks behind the content
+document.addEventListener('DOMContentLoaded', function () {
+  const layer = document.getElementById('petal-layer');
+  if (!layer) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const marks = ['·', '✿', '·'];
+  const count = window.innerWidth < 560 ? 7 : 12;
+
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement('span');
+    petal.className = 'petal';
+    petal.textContent = marks[Math.floor(Math.random() * marks.length)];
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.fontSize = (10 + Math.random() * 10) + 'px';
+    const duration = 16 + Math.random() * 14;
+    petal.style.animationDuration = duration + 's';
+    petal.style.animationDelay = (Math.random() * duration * -1) + 's';
+    layer.appendChild(petal);
+  }
+});
+
 // Mobile nav toggle
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.nav-toggle');
