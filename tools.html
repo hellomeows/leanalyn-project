@@ -14,7 +14,7 @@
 <div class="paper-grid"></div>
 
 <header class="site-header">
-  <a href="index.html" class="brand">Leanalyn Figueroa<span class="brand-dot">.</span></a>
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
   <nav class="main-nav">
     <a href="index.html">home</a>
     <a href="coursework.html">coursework</a>
@@ -22,14 +22,25 @@
     <a href="about.html">about</a>
     <a href="resume.html">resume</a>
   </nav>
-  <button class="nav-toggle" aria-label="Open menu">☰</button>
+  <div class="header-controls">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch color palette">muted palette</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
+
+<div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
 
 <main>
 
+  <nav class="tools-progress" id="tools-progress" aria-label="Tool progress">
+    <a href="#tvm" data-tool="tvm">1. Time Value of Money</a>
+    <a href="#newton" data-tool="newton">2. Newton's Method</a>
+    <a href="#pagerank" data-tool="pagerank">3. PageRank</a>
+  </nav>
+
   <section class="journal-entry tools-intro">
     <p class="entry-date">Tools</p>
-    <h1 class="entry-title">Calculators</h1>
+    <h1 class="entry-title">Three tools, three classes.</h1>
     <div class="entry-body">
       <p>
         Each calculator below comes from a concept I actually worked
@@ -163,11 +174,12 @@
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/tools-progress.js"></script>
 <script src="js/tvm.js"></script>
 <script src="js/newton.js"></script>
 <script src="js/pagerank.js"></script>

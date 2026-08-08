@@ -22,8 +22,13 @@
     <a href="about.html" class="active">about</a>
     <a href="resume.html">resume</a>
   </nav>
-  <button class="nav-toggle" aria-label="Open menu">☰</button>
+  <div class="header-controls">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch color palette">muted palette</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
+
+<div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
 
 <main>
 
@@ -31,9 +36,15 @@
     <p class="entry-date">About</p>
     <h1 class="entry-title">A little more about me.</h1>
 
+    <p class="now-playing">
+      <span class="np-icon">♪</span>
+      <span class="np-label">now playing:</span>
+      <span id="now-playing-track">Song Title — Artist</span>
+    </p>
+
     <div class="entry-body">
       <p>
-        I'm Leanalyn. I grew up in the Chicago suburbs and I've lived here my
+        I'm Lea. I grew up in the Chicago suburbs and I've lived here my
         whole life. I started college at College of DuPage, where I earned
         my Associate of Arts in May 2024, that's really where I figured out
         how to be a college student: how to study, how to ask for help, how
@@ -84,6 +95,26 @@
         expect.
       </p>
 
+      <h2 class="entry-h2">Site log</h2>
+      <p>
+        Not a highlight reel, just a record — a running log of what
+        actually changed on this site, and when.
+      </p>
+      <div class="site-log">
+        <div class="log-entry">
+          <span class="log-date">Aug 2026</span>
+          <p class="log-text">Added a slow-moving pastel background, a palette toggle, and this log. Tried a louder gradient first — this quieter one felt more like the rest of the site.</p>
+        </div>
+        <div class="log-entry">
+          <span class="log-date">Jul 2026</span>
+          <p class="log-text">Fixed a deployment issue where files were landing in the repo root instead of the right subfolders. Small mistake, annoying to track down.</p>
+        </div>
+        <div class="log-entry">
+          <span class="log-date">Jun 2026</span>
+          <p class="log-text">Reworked the homepage sticky notes to flip and stack instead of just fading in. Refreshed the color palette across the whole site to match.</p>
+        </div>
+      </div>
+
       <h2 class="entry-h2">Let's talk</h2>
       <p>
         I'm always glad to talk about any of this, coursework, the
@@ -99,7 +130,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 

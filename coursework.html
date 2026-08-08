@@ -14,7 +14,7 @@
 <div class="paper-grid"></div>
 
 <header class="site-header">
-  <a href="index.html" class="brand">Leanalyn Figueroa<span class="brand-dot">.</span></a>
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
   <nav class="main-nav">
     <a href="index.html">home</a>
     <a href="coursework.html" class="active">coursework</a>
@@ -22,14 +22,19 @@
     <a href="about.html">about</a>
     <a href="resume.html">resume</a>
   </nav>
-  <button class="nav-toggle" aria-label="Open menu">☰</button>
+  <div class="header-controls">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch color palette">muted palette</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
+
+<div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
 
 <main>
 
   <section class="journal-entry">
     <p class="entry-date">Coursework</p>
-    <h1 class="entry-title">What I've worked on.</h1>
+    <h1 class="entry-title">What I actually worked on.</h1>
 
     <div class="entry-body">
       <p>
@@ -53,10 +58,10 @@
         <a href="tools.html#pagerank">PageRank simulator</a> on this site.
       </p>
       <p>
-        Outside of that, most of my database work has been hands-on SQL
-        across a handful of real schema sets, StayWell, ConstructCo,
-        SaleCo, LargeCo, and FACT, plus building the KimTay and StayWell
-        databases from scratch in MySQL labs.
+        Outside of that, most of my database work has been hands-on
+        <span class="noted" tabindex="0">SQL across a handful of real schema sets<span class="note-pop">StayWell, ConstructCo, SaleCo, LargeCo, and FACT — mostly iterative, grader-based debugging</span></span>,
+        plus building the KimTay and StayWell databases from scratch in
+        MySQL labs.
       </p>
 
       <h2 class="entry-h2">Programming</h2>
@@ -79,9 +84,9 @@
         My calculus and optimization coursework covered derivatives,
         optimization problems, and root-finding methods, including
         Newton's Method, which became the second tool on this site. Seeing
-        the tangent-line approximation actually converge on a canvas,
-        instead of just on paper, is honestly part of why I wanted to build
-        it in the first place. Beyond that, linear algebra and statistics
+        <span class="noted" tabindex="0">the tangent-line approximation actually converge<span class="note-pop">watching it visually snap toward the root after a few iterations is what made the method click for me</span></span>
+        on a canvas, instead of just on paper, is honestly part of why I
+        wanted to build it in the first place. Beyond that, linear algebra and statistics
         have supported both my CIS coursework (matrix factorization, data
         analysis) and my ongoing actuarial exam prep. I'm currently an SOA
         registered candidate studying for Exam FM.
@@ -114,7 +119,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 

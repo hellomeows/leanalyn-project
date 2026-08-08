@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <div class="paper-grid"></div>
 
 <header class="site-header">
-  <a href="index.html" class="brand">Leanalyn Figueroa<span class="brand-dot">.</span></a>
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
   <nav class="main-nav">
     <a href="index.html" class="active">home</a>
     <a href="coursework.html">coursework</a>
@@ -22,18 +22,23 @@
     <a href="about.html">about</a>
     <a href="resume.html">resume</a>
   </nav>
-  <button class="nav-toggle" aria-label="Open menu">☰</button>
+  <div class="header-controls">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch color palette">muted palette</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
+
+<div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
 
 <main>
 
   <!-- JOURNAL-STYLE INTRO -->
   <section class="journal-entry">
-    <p class="entry-date">Capstone Project, 2026</p>
+    <p class="entry-date">Capstone, 2026</p>
     <h1 class="entry-title">Hi, I'm Leanalyn.</h1>
 
     <p class="entry-lede">
-      A few notes on what I've worked on, click each one to flip to
+      A few notes on what I actually worked on, click each one to flip to
       the next.
     </p>
 
@@ -42,7 +47,8 @@
         <p>
           I'm a senior at Benedictine University finishing up a B.S. in
           Computer Information Systems. This site is my capstone project,
-          a record of what I've worked on and
+          basically a slightly more honest version of a portfolio: not a
+          highlight reel, just a record of what I actually worked on and
           learned along the way.
         </p>
         <span class="sticky-hint">tap for more →</span>
@@ -69,7 +75,7 @@
           PageRank simulator. None of them are big, but they all actually
           run the math instead of just describing it, which felt like a
           better way to prove I learned something than just listing a
-          class name. *Note: these are subject to change*
+          class name.
         </p>
         <span class="sticky-hint">tap for more →</span>
       </div>
@@ -101,13 +107,13 @@
       <span class="dot"></span>
     </div>
 
-    <p class="entry-signoff">— Leanalyn</p>
+    <p class="entry-signoff">— Lea</p>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 
