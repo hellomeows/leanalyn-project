@@ -144,3 +144,64 @@
     padding: 24px 22px;
   }
 }
+
+/* ============================================
+   RIGHT NOW
+   a small, dated status block — what's currently
+   true, separate from the sticky-note narrative
+   ============================================ */
+.now-block {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 3px 10px 8px 10px;
+  padding: 20px 24px;
+  margin: 0 0 40px;
+  max-width: 480px;
+}
+.now-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 10px;
+}
+.now-block-list {
+  margin: 0;
+  padding-left: 18px;
+}
+.now-block-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.now-block-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   ELSEWHERE ROW
+   quick contact links under the sign-off
+   ============================================ */
+.elsewhere-row {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+}
+.elsewhere-row a {
+  color: var(--indigo);
+  text-decoration: underline;
+  text-decoration-color: rgba(87, 98, 154, 0.35);
+  text-underline-offset: 3px;
+}
+.elsewhere-row a:hover {
+  color: var(--coral);
+  text-decoration-color: var(--coral);
+}
+.elsewhere-dot {
+  margin: 0 8px;
+  opacity: 0.6;
+}

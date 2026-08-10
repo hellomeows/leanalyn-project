@@ -14,7 +14,7 @@
 <div class="paper-grid"></div>
 
 <header class="site-header">
-  <a href="index.html" class="brand">Leanalyn Figueroa<span class="brand-dot">.</span></a>
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
   <nav class="main-nav">
     <a href="index.html">home</a>
     <a href="coursework.html">coursework</a>
@@ -36,19 +36,19 @@
     <p class="entry-date">About</p>
     <h1 class="entry-title">A little more about me.</h1>
 
-    <!-- Edit me: point href at a Spotify/YouTube track or playlist link,
-         and swap the text inside #now-playing-track -->
-    <a class="now-playing" href="https://www.youtube.com/watch?v=l43QVKRmXsg&list=RDl43QVKRmXsg&start_radio=1&pp=ygUYcGxheWxpc3QgY3J5c3RhbCBjYXN0bGVzoAcB" id="now-playing-link" target="_blank" rel="noopener">
-      <span class="np-icon">♪</span>
-      <span class="np-text">
-        <span class="np-label">now playing</span>
-        <span class="np-track" id="now-playing-track">my current playlist →</span>
-      </span>
-    </a>
+    <!-- Edit me: swap the list/v IDs for a different YouTube video or playlist -->
+    <div class="now-playing-embed">
+      <span class="np-embed-label"><span class="np-icon">♪</span> now playing</span>
+      <iframe
+        src="https://www.youtube.com/embed/l43QVKRmXsg?list=RDl43QVKRmXsg"
+        width="100%" height="152" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>
+    </div>
 
     <div class="entry-body">
       <p>
-        I'm Leanalyn. I grew up in the Chicago suburbs and I've lived here my
+        I'm Lea. I grew up in the Chicago suburbs and I've lived here my
         whole life. I started college at College of DuPage, where I earned
         my Associate of Arts in May 2024, that's really where I figured out
         how to be a college student: how to study, how to ask for help, how
@@ -134,7 +134,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 

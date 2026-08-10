@@ -11,7 +11,16 @@
 /* ============================================
    RESUME SHEET (looks like an actual document)
    ============================================ */
+/* ============================================
+   RESUME SHEET (looks like an actual document)
+   Deliberately overrides the sitewide handwritten
+   fonts — a resume needs to stay easy to scan and
+   professional, even while the rest of the site
+   leans into a handwritten journal look.
+   ============================================ */
 .resume-wrap {
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 10px 24px 80px;

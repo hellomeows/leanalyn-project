@@ -14,7 +14,7 @@
 <div class="paper-grid"></div>
 
 <header class="site-header">
-  <a href="index.html" class="brand">Leanalyn Figueroa<span class="brand-dot">.</span></a>
+  <a href="index.html" class="brand">LF<span class="brand-dot">.</span></a>
   <nav class="main-nav">
     <a href="index.html" class="active">home</a>
     <a href="coursework.html">coursework</a>
@@ -34,26 +34,23 @@
 
   <!-- JOURNAL-STYLE INTRO -->
   <section class="journal-entry">
-    <p class="entry-date">Capstone Project, 2026</p>
+    <p class="entry-date">Capstone, 2026</p>
     <h1 class="entry-title">Hi, I'm Leanalyn.</h1>
 
     <p class="entry-lede">
-      A few notes on what I worked on, click each one to flip to
+      A few notes on what I actually worked on, click each one to flip to
       the next.
     </p>
 
-    <!-- Edit me: point href at a Spotify/YouTube track or playlist link,
-         and swap the text inside #home-now-playing-track -->
-    <a>
-    <iframe style="border-radius:12px" src="https://www.youtube.com/watch?v=l43QVKRmXsg&list=RDl43QVKRmXsg&start_radio=1&pp=ygUYcGxheWxpc3QgY3J5c3RhbCBjYXN0bGVzoAcB"
-  width="100%" height="152" frameBorder="0" allowfullscreen=""
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <span class="np-icon">♪</span>
-      <span class="np-text">
-        <span class="np-label">now playing</span>
-        <span class="np-track" id="now-playing-track">my current playlist →</span>
-      </span>
-    </a>
+    <!-- Edit me: swap the list/v IDs for a different YouTube video or playlist -->
+    <div class="now-playing-embed">
+      <span class="np-embed-label"><span class="np-icon">♪</span> now playing</span>
+      <iframe
+        src="https://www.youtube.com/embed/l43QVKRmXsg?list=RDl43QVKRmXsg"
+        width="100%" height="152" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>
+    </div>
 
     <div class="sticky-stack" id="sticky-stack">
       <div role="button" tabindex="0" class="sticky-note" data-color="yellow" style="--rot:-3deg;">
@@ -129,7 +126,7 @@
       </ul>
     </div>
 
-    <p class="entry-signoff">— Leanalyn</p>
+    <p class="entry-signoff">— Lea</p>
 
     <div class="elsewhere-row">
       <a href="mailto:leanalynf@protonmail.com">email</a>
@@ -143,7 +140,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>Built by hand with HTML, CSS, and JavaScript</p>
+  <p>Built by hand with HTML, CSS, and JavaScript — no framework, no template.</p>
   <p class="footer-small">Leanalyn Figueroa · Capstone Project · 2026</p>
 </footer>
 
